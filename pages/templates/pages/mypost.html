@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block list %}
+<li><a href="http://localhost:8000/pages/post">Posty</a></li>
+<li><a href="http://localhost:8000/pages/post/all/">All Posts</a></li>
+<li><a href="http://localhost:8000/pages/post/my/">My Posts</a></li>
+<li><a href="http://localhost:8000/account/logout/">Logout</a></li>
+{% endblock %}
+{% block content %}
+{% for x in ls %}
+<p style="color : white">
+<font style="font-size: 30px; color: blueviolet;" >{{x.title}}</font><br>
+{{x.description}}
+<br>
+</p>
+{% endfor %}
+{% endblock %}

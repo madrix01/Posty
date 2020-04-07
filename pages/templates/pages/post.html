@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Posty login{% endblock %}
+{% load crispy_forms_tags %}
+{% block list %}
+<li><a href="http://localhost:8000/pages/post">Posty</a></li>
+<li><a href="http://localhost:8000/pages/post/all/">All Posts</a></li>
+<li><a href="http://localhost:8000/pages/post/my/">My Posts</a></li>
+<li><a href="http://localhost:8000/account/logout/">Logout</a></li>
+{% endblock %}
+{% block content %}
+<style>
+    input{
+    color: white;
+    display: block;
+    width: 270px;
+    text-align: left;
+    background-color: #23272B;
+    font-family:'Tw Cen MT'; 
+    border: 0px;
+    border-radius: 4px;
+    }
+
+    form{
+        font-style: 'Tw Cen MT';
+        color: white;
+    }
+</style>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button type='submit' class='btn btn-dark'>POST</button>
+    </form>
+{% endblock %}
